@@ -70,13 +70,6 @@ third_party_settings:
         source: field_main_image
         weight: -8
         label: 'Find replace REGEX2'
-      d90ec793-2223-4764-9d6b-2e60e185b996:
-        text: eng
-        uuid: d90ec793-2223-4764-9d6b-2e60e185b996
-        plugin: rewrite
-        source: langcode
-        weight: 0
-        label: Rewrite
       99904c8d-42ca-4a24-a424-b80ac4c19397:
         default_value: ''
         only_if_empty: true
@@ -101,8 +94,8 @@ third_party_settings:
         source: field_pdf_description
         weight: -10
         label: 'Set value or default value'
-id: ahc_page
 label: 'AHC Page'
+id: ahc_page
 description: ''
 help: ''
 import_period: -1
@@ -119,15 +112,16 @@ processor: 'entity:node'
 processor_configuration:
   values:
     type: ahc_page
-  langcode: eng
+  langcode: en
   insert_new: 1
   update_existing: 2
   update_non_existent: _keep
   skip_hash_check: false
   authorize: false
+  revision: false
   expire: -1
   owner_feed_author: false
-  owner_id: 0
+  owner_id: 1
 custom_sources:
   uid:
     value: uid
@@ -257,8 +251,8 @@ mappings:
     settings:
       language: ''
       reference_by: uid
-      feeds_item: guid
       autocreate: 0
+      autocreate_bundle: false
   -
     target: body
     map:
@@ -280,7 +274,7 @@ mappings:
       value: nid
     settings: {  }
     unique:
-      value: '1'
+      value: 1
   -
     target: field_image_attribution_ahc
     map:
@@ -299,6 +293,7 @@ mappings:
       reference_by: fid
       autocreate: '1'
       existing: '2'
+      autocreate_bundle: false
   -
     target: field_pdf
     map:
@@ -309,6 +304,7 @@ mappings:
       reference_by: fid
       autocreate: '1'
       existing: '2'
+      autocreate_bundle: false
   -
     target: field_postscript
     map:
@@ -323,8 +319,8 @@ mappings:
     settings:
       language: ''
       reference_by: tid
-      feeds_item: guid
       autocreate: 0
+      autocreate_bundle: templates
   -
     target: title
     map:
@@ -342,9 +338,4 @@ mappings:
       reference_by: fid
       autocreate: '1'
       existing: '2'
-  -
-    target: langcode
-    map:
-      value: langcode
-    settings:
-      language: null
+      autocreate_bundle: false
