@@ -94,6 +94,17 @@ third_party_settings:
         source: field_pdf_description
         weight: -10
         label: 'Set value or default value'
+      0c8c8b8a-f66c-4036-9bbe-51920b6096fa:
+        find: \n
+        replace: ' '
+        case_sensitive: false
+        word_boundaries: false
+        whole: false
+        uuid: 0c8c8b8a-f66c-4036-9bbe-51920b6096fa
+        plugin: find_replace
+        source: body
+        weight: 0
+        label: 'Find replace'
 label: 'AHC Page'
 id: ahc_page
 description: ''
