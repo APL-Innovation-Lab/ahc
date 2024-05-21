@@ -1,0 +1,1 @@
+ddev drush eval "echo \Drupal::entityQuery('node')->condition('type', 'oakwood')->count()->execute();"
