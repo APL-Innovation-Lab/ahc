@@ -1,49 +1,50 @@
 .DS_Store
 
+
 # Ignore configuration files that may contain sensitive information
-/html/sites/*/*settings*.php
-/html/sites/*/*services*.yml
+*/html/sites/*/*settings*.php
+*/html/sites/*/*services*.yml
 
 # Ignore paths that may contain user-generated content
-/html/sites/*/files
-/html/sites/*/public
-/html/sites/*/private
-/html/sites/*/files-public
-/html/sites/*/files-private
+*/html/sites/*/files
+*/html/sites/*/public
+*/html/sites/*/private
+*/html/sites/*/files-public
+*/html/sites/*/files-private
 
 # Ignore paths that may contain temporary files
-/html/sites/*/translations
-/html/sites/*/tmp
-/html/sites/*/cache
+*/html/sites/*/translations
+*/html/sites/*/tmp
+*/html/sites/*/cache
 
 # Ignore drupal core (if not versioning drupal sources)
-/html/vendor
-/html/core
-/html/modules/README.txt
-/html/profiles/README.txt
-/html/sites/development.services.yml
-/html/sites/example.settings.local.php
-/html/sites/example.sites.php
-/html/sites/README.txt
-/html/themes/README.txt
-/html/.csslintrc
-/html/.editorconfig
-/html/.eslintignore
-/html/.eslintrc.json
-/html/.gitattributes
-/html/.htaccess
-/html/.ht.router.php
-/html/autoload.php
-/html/composer.json
-/html/composer.lock
-/html/example.gitignore
-/html/index.php
-/html/INSTALL.txt
-/html/LICENSE.txt
-/html/README.txt
-/html/robots.txt
-/html/update.php
-/html/web.config
+çvendor
+*/html/core
+*/html/modules/README.txt
+*/html/profiles/README.txt
+*/html/sites/development.services.yml
+*/html/sites/example.settings.local.php
+*/html/sites/example.sites.php
+*/html/sites/README.txt
+*/html/themes/README.txt
+*/html/.csslintrc
+*/html/.editorconfig
+*/html/.eslintignore
+*/html/.eslintrc.json
+*/html/.gitattributes
+*/html/.htaccess
+*/html/.ht.router.php
+*/html/autoload.php
+*/html/composer.json
+*/html/composer.lock
+*/html/example.gitignore
+*/html/index.php
+*/html/INSTALL.txt
+*/html/LICENSE.txt
+*/html/README.txt
+*/html/robots.txt
+*/html/update.php
+*/html/web.config
 
 # Ignore vendor dependencies and scripts
 /vendor
