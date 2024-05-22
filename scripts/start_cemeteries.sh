@@ -1,0 +1,1 @@
+cd cemeteries && yes | curl -fsSL https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash && ddev start
