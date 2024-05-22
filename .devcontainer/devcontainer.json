@@ -1,0 +1,25 @@
+{
+    "name": "My DDEV Project",
+    "forwardPorts": [8080, 8443],
+    "portsAttributes": {
+      "8080": {
+        "label": "Web Server (HTTP)",
+        "onAutoForward": "openBrowser",
+        "visibility": "public"
+      },
+      "8443": {
+        "label": "Web Server (HTTPS)",
+        "onAutoForward": "openBrowser",
+        "visibility": "public"
+      }
+    },
+    "postCreateCommand": "cd cemeteries && curl -fsSL https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash && ddev start",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.defaultProfile.linux": "bash"
+        }
+      }
+    }
+  }
+  
