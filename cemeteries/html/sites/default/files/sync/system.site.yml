@@ -6,9 +6,9 @@ name: 'Austin History Center'
 mail: bryce.benton@austintexas.gov
 slogan: ''
 page:
-  403: ''
-  404: ''
-  front: /node
+  403: /ahc/cemeteries
+  404: /ahc/cemeteries
+  front: /ahc/cemeteries
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
