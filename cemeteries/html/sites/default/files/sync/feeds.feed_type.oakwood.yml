@@ -3,6 +3,7 @@ langcode: eng
 status: true
 dependencies:
   config:
+    - core.base_field_override.node.oakwood.title
     - field.field.node.oakwood.field_attendingphysician
     - field.field.node.oakwood.field_bywhomburied
     - field.field.node.oakwood.field_cause_of_death_archival_an
@@ -136,7 +137,7 @@ third_party_settings:
         source: date
         weight: 0
         label: 'Find replace REGEX'
-label: 'AHC Cemeteries'
+label: oakwood
 id: oakwood
 description: ''
 help: ''
@@ -154,7 +155,7 @@ processor: 'entity:node'
 processor_configuration:
   values:
     type: oakwood
-  langcode: und
+  langcode: eng
   insert_new: 1
   update_existing: 2
   update_non_existent: _keep
@@ -163,7 +164,7 @@ processor_configuration:
   revision: false
   expire: -1
   owner_feed_author: false
-  owner_id: 1
+  owner_id: 69420
 custom_sources:
   pkoakwood:
     value: pkoakwood
@@ -288,7 +289,7 @@ mappings:
     settings:
       language: null
     unique:
-      value: 1
+      value: '1'
   -
     target: field_firstname
     map:
