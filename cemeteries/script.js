@@ -1,6 +1,6 @@
-console.log('Loading data...');
-
 document.addEventListener("DOMContentLoaded", function() {
+    let parsedData = [];
+
     // Function to load CSV file
     function loadCSV(url, callback) {
         const xhr = new XMLHttpRequest();
@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to populate table with data
     function populateTable(data) {
         const tableBody = document.querySelector("#cemeteries-table tbody");
+        tableBody.innerHTML = ''; // Clear existing data
+
         data.forEach(item => {
             const row = document.createElement("tr");
             row.classList.add("oakwood-row");
@@ -119,13 +121,49 @@ document.addEventListener("DOMContentLoaded", function() {
         for (let i = 0; i < str.length; i++) {
             let text = str[i].innerText;
             const str2 = text.charAt(0).toUpperCase() + text.slice(1);
+
             str[i].innerText = str2;
         }
     }
 
+    // Function to filter table data
+    function applyFilters() {
+        const nameFilter = document.getElementById("name-filter").value.toLowerCase();
+        const locationFilter = document.getElementById("location-filter").value.toLowerCase();
+        const keywordFilter = document.getElementById("keyword-filter").value.toLowerCase();
+
+        const filteredData = parsedData.filter(item => {
+            const fullName = `${item["firstname"]} ${item["lastname"]} ${item["name_contribution"] ? "(" + item["name_contribution"] + ")" : ""}`.toLowerCase();
+            const burialLocation = `${item["whereburied"]} ${item["SecLotSpace"]}`.toLowerCase();
+            
+            const matchesName = fullName.includes(nameFilter);
+            const matchesLocation = burialLocation.includes(locationFilter);
+
+            const keywordMatches = Object.values(item).some(value => 
+                value.toString().toLowerCase().includes(keywordFilter)
+            );
+
+            return matchesName && matchesLocation && keywordMatches;
+        });
+
+        populateTable(filteredData);
+    }
+
+    // Event listener for filter button
+    document.getElementById("filter-button").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent form submission
+        applyFilters();
+    });
+
+    // Ensure form submission with Enter key triggers the filter function
+    document.getElementById("filter-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        applyFilters();
+    });
+
     // Load CSV and populate table
     loadCSV('austin-cemeteries.csv', function(data) {
-        const parsedData = parseCSV(data);
+        parsedData = parseCSV(data);
         populateTable(parsedData);
     });
 });

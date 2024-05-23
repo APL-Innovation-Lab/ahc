@@ -15,6 +15,24 @@
         <p>The cemetery ledgers are available for viewing at The Austin History Center, and preserve the original, descriptive language used by the historical subjects who authored the content. Information about accessing the original ledgers and other information regarding the Oakwood Cemetery, and other City-owned cemeteries, including maps, clippings, and photographs is available in the Guide to the Collection. The original version of this database is also available upon request.</p>
         <p>We embrace ongoing conversations about inclusive language and welcome your feedback. This is a large database and despite our best efforts, you may encounter harmful, offensive, or outdated language. If you encounter such language, or have other questions or comments, <a href="/ahc/cemeteries-contact">please report your concern here</a>.</p>
     </header>
+
+    <!-- Filters -->
+    <form class="filters" id="filter-form">
+        <div class="form-group">
+            <label for="name-filter">Name:</label>
+            <input type="text" id="name-filter" placeholder="Filter by name..." class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="location-filter">Burial Location:</label>
+            <input type="text" id="location-filter" placeholder="Filter by burial location..." class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="keyword-filter">Keyword:</label>
+            <input type="text" id="keyword-filter" placeholder="Filter by keyword..." class="form-control">
+        </div>
+        <button type="submit" id="filter-button" class="usa-button">Apply Filters</button>
+    </form>
+
     <table id="cemeteries-table" class="usa-table cols-14">
         <thead>
             <tr>
@@ -38,6 +56,7 @@
             <!-- Data will be populated here by JavaScript -->
         </tbody>
     </table>
+
     <script src="script.js"></script>
 </body>
 </html>
