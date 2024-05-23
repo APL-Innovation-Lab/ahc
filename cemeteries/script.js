@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td headers="view-field-nativity-table-column" class="views-field views-field-field-nativity">${item["nativity"]}</td>
                 <td headers="view-field-disease-table-column" class="views-field views-field-field-disease">${causeOfDeath}</td>
                 <td headers="view-field-attendingphysician-table-column" class="views-field views-field-field-attendingphysician">${item["attendingphysician"]}</td>
-                <td headers="view-field-whereburied-table-column" class="views-field views-field-field-whereburied">${item["whereburied"]}</td>
+                <td headers="view-field-whereburied-table-column" class="views-field views-field-field-whereburied">${item["whereburied"].replace(/""/g, '"')}</td>
                 <td headers="view-field-seclotspace-table-column" class="views-field views-field-field-seclotspace">${item["SecLotSpace"]}</td>
                 <td headers="view-field-bywhomburied-table-column" class="views-field views-field-field-bywhomburied">${item["bywhomburied"]}</td>
                 <td headers="view-field-profession-table-column" class="views-field views-field-field-profession">${item["profession"]}</td>
